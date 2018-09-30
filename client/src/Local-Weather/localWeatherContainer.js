@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CurrentLocation from "./CurrentLocation";
 import CurrentWeather from "./CurrentWeather";
+import WeeklyForecast from "./WeeklyForecast/WeeklyForecast";
 import { getForecast } from "../redux/local-weather";
 import { connect } from "react-redux";
 import Geocode from "react-geocode";
@@ -36,6 +37,7 @@ class localWeatherContainer extends Component {
 
 
     render(){
+        // console.log(this.props.forecast.data);
         return(
             <div>
                 <CurrentLocation 
@@ -45,6 +47,7 @@ class localWeatherContainer extends Component {
                 forecastData={this.props.forecast.data}
                 />
                 <CurrentWeather current={this.props.forecast.data && this.props.forecast.data.currently}/>
+                <WeeklyForecast weekly={this.props.forecast.data && this.props.forecast.data.daily}/>
             </div>
         )
     }
