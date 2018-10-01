@@ -2,8 +2,19 @@
   font-family: Roboto;
   color: white; }
 
+#current {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+#location {
+  margin-top: 0; }
+
 html {
   background-color: #193441; }
+
+body {
+  margin: 0; }
 
 i {
   -webkit-animation: rotate-loading-icon infinite 2s;

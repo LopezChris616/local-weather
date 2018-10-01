@@ -48,7 +48,13 @@ class localWeatherContainer extends Component {
         }else {
             loading = (
                 <div>
-                    <CurrentWeather current={this.props.forecast.data && this.props.forecast.data.currently}/>
+                    <CurrentWeather 
+                    current={this.props.forecast.data && this.props.forecast.data.currently}
+                    latitude={this.state.lat}
+                    longitude={this.state.lng}
+                    location={this.state.location}
+                    forecastData={this.props.forecast.data}
+                    />
                     <WeeklyForecast weekly={this.props.forecast.data && this.props.forecast.data.daily}/>
                 </div>
             ) 
@@ -58,12 +64,12 @@ class localWeatherContainer extends Component {
         console.log(this.props.forecast.data);
         return(
             <div>
-                <CurrentLocation 
+                {/* <CurrentLocation 
                 latitude={this.state.lat}
                 longitude={this.state.lng}
                 location={this.state.location}
                 forecastData={this.props.forecast.data}
-                />
+                /> */}
                 {loading}
             </div>
         )
