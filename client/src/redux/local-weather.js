@@ -4,7 +4,7 @@ import thunk from "redux-thunk";
 
 export const getForecast = (latitude, longitude) => {
     return dispatch => {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/8d7f0d75a142c7e18e0b5c6be232f22e/${latitude},${longitude}`).then(response => {
+        axios.get(`https://vschool-cors.herokuapp.com?url=https://api.darksky.net/forecast/8d7f0d75a142c7e18e0b5c6be232f22e/${latitude},${longitude}`).then(response => {
             dispatch({
                 type: "GET_FORECAST",
                 forecast: response

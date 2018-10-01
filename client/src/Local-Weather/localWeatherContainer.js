@@ -37,7 +37,25 @@ class localWeatherContainer extends Component {
 
 
     render(){
-        // console.log(this.props.forecast.data);
+        let loading = null;
+        if(this.props.forecast.length < 1){
+            loading = (
+                <div>
+                    <h1>Loading...</h1>
+                    <i className="fas fa-spinner fa-3x"></i>
+                </div>
+            )
+        }else {
+            loading = (
+                <div>
+                    <CurrentWeather current={this.props.forecast.data && this.props.forecast.data.currently}/>
+                    <WeeklyForecast weekly={this.props.forecast.data && this.props.forecast.data.daily}/>
+                </div>
+            ) 
+            
+        }
+        // console.log(this.props.forecast);
+        console.log(this.props.forecast.data);
         return(
             <div>
                 <CurrentLocation 
@@ -46,8 +64,7 @@ class localWeatherContainer extends Component {
                 location={this.state.location}
                 forecastData={this.props.forecast.data}
                 />
-                <CurrentWeather current={this.props.forecast.data && this.props.forecast.data.currently}/>
-                <WeeklyForecast weekly={this.props.forecast.data && this.props.forecast.data.daily}/>
+                {loading}
             </div>
         )
     }

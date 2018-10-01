@@ -10,6 +10,9 @@ const WeeklyForecast = props => {
             summary={day.summary} 
             tempHigh={day.temperatureHigh}
             tempLow={day.temperatureLow}
+            sunset={day.sunsetTime}
+            sunrise={day.sunriseTime}
+            wind={day.windSpeed}
             day={day.time} />
         )
     })
