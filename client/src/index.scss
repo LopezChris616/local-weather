@@ -82,5 +82,13 @@ html {
     }
 }
 
+//weekly forecast
+#weekly-forecast {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+}
+
 //loading icon animation
 @include icon-spinner-animation();

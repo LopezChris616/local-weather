@@ -34,6 +34,12 @@ i {
   #current canvas {
     align-self: center; }
 
+#weekly-forecast {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  justify-items: center; }
+
 @-webkit-keyframes rotate-loading-icon {
   0% {
     -webkit-transform: rotate(0deg);

@@ -13,7 +13,8 @@ const WeeklyForecast = props => {
             sunset={day.sunsetTime}
             sunrise={day.sunriseTime}
             wind={day.windSpeed}
-            day={day.time} />
+            day={day.time}
+            icon={day.icon} />
         )
     })
     return(

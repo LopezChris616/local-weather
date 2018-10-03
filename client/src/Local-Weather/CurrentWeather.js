@@ -1,6 +1,6 @@
 import React from "react";
 import Timestamp from "react-timestamp";
-import Skycons from 'react-skycons'
+import Skycons from "react-skycons";
 import CurrentLocation from "./CurrentLocation";
 
 const CurrentWeather = props => {
