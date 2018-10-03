@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CurrentLocation from "./CurrentLocation";
 import CurrentWeather from "./CurrentWeather";
 import WeeklyForecast from "./WeeklyForecast/WeeklyForecast";
 import { getForecast } from "../redux/local-weather";
@@ -40,14 +39,14 @@ class localWeatherContainer extends Component {
         let loading = null;
         if(this.props.forecast.length < 1){
             loading = (
-                <div>
-                    <h1>Loading...</h1>
+                <div id="loading">
+                    <h1>Loading Weather Data...</h1>
                     <i className="fas fa-spinner fa-3x"></i>
                 </div>
             )
         }else {
             loading = (
-                <div>
+                <div id="your-weather">
                     <CurrentWeather 
                     current={this.props.forecast.data && this.props.forecast.data.currently}
                     latitude={this.state.lat}
@@ -64,12 +63,6 @@ class localWeatherContainer extends Component {
         console.log(this.props.forecast.data);
         return(
             <div>
-                {/* <CurrentLocation 
-                latitude={this.state.lat}
-                longitude={this.state.lng}
-                location={this.state.location}
-                forecastData={this.props.forecast.data}
-                /> */}
                 {loading}
             </div>
         )

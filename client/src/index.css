@@ -11,6 +11,15 @@ i {
   -webkit-animation: rotate-loading-icon infinite 2s;
   animation: rotate-loading-icon infinite 2s; }
 
+#your-weather {
+  -webkit-animation: fadeIn 1.5s;
+  animation: fadeIn 1.5s; }
+
+#loading {
+  text-align: center;
+  color: white;
+  margin-top: 100px; }
+
 #current {
   height: 100vh;
   background-size: cover;
@@ -32,6 +41,7 @@ i {
   #current h2 {
     font-size: 2rem; }
   #current canvas {
+    -ms-flex-item-align: center;
     align-self: center; }
 
 #weekly-forecast {
@@ -64,3 +74,15 @@ i {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
