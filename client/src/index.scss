@@ -1,37 +1,86 @@
+$center: center;
+$loading-icon-animation: rotate-loading-icon;
+$loading-animation-duration: infinite;
+
+@mixin loading-icon($animation-speed) {
+    -webkit-animation: $loading-icon-animation $loading-animation-duration $animation-speed;
+            animation: $loading-icon-animation $loading-animation-duration $animation-speed;
+}
+
+@mixin icon-spinner-transform($rotate-degree) {
+    -webkit-transform: rotate($rotate-degree); 
+            transform: rotate($rotate-degree);
+}
+
+@mixin icon-spinner-animation() {
+    @-webkit-keyframes rotate-loading-icon {
+        0% { 
+            @include icon-spinner-transform(0deg);
+        }
+        100% { 
+            @include icon-spinner-transform(360deg) 
+        }
+    }
+    
+    @keyframes rotate-loading-icon {
+        0% {
+            @include icon-spinner-transform(0deg);
+        }
+        100% {
+            @include icon-spinner-transform(360deg);
+        }
+    }
+}
+
+
+//global styles
 * {
     font-family: Roboto;
     color: white;
 }
 
+html {
+    background-color: #193441;
+ }
+ 
+ body {
+     margin: 0;
+ }
+ 
+ i {
+     @include loading-icon(2s);
+ }
+
+
+//current weather
 #current {
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    -ms-flex-line-pack: $center;
+        align-content: $center;
+    #time {
+        margin: 0;
+    }
+    #currentInfo {
+        grid-column: 1 / 2;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    canvas {
+        align-self: $center;
+    }
 }
 
-#location {
-    margin-top: 0;
-}
-
-html {
-   background-color: #193441;
-}
-
-body {
-    margin: 0;
-}
-
-i {
-    -webkit-animation: rotate-loading-icon infinite 2s;
-            animation: rotate-loading-icon infinite 2s;
-}
-
-@-webkit-keyframes rotate-loading-icon {
-    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-}
-
-@keyframes rotate-loading-icon {
-    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-}
+//loading icon animation
+@include icon-spinner-animation();

@@ -20,7 +20,9 @@ const WeeklyForecast = props => {
         <div>
             <h1>Weekly Forecast</h1>
             <h2>Summary: {props.weekly && props.weekly.summary}</h2>
-            {week}
+            <div id="weekly-forecast">
+                {week}
+            </div>
         </div>
     )
 }
