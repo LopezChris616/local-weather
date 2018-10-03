@@ -19,8 +19,10 @@ const WeeklyForecast = props => {
     })
     return(
         <div>
-            <h1>Weekly Forecast</h1>
-            <h2>Summary: {props.weekly && props.weekly.summary}</h2>
+            <div id="weekly-intro">
+                <h1>Weekly Forecast</h1>
+                <h2>Summary: {props.weekly && props.weekly.summary}</h2>
+            </div>
             <div id="weekly-forecast">
                 {week}
             </div>

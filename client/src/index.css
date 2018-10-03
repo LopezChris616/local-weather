@@ -1,6 +1,5 @@
 * {
-  font-family: Roboto;
-  color: white; }
+  font-family: Roboto; }
 
 html {
   background-color: #193441; }
@@ -17,6 +16,7 @@ i {
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
+  color: white;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   -ms-flex-line-pack: center;
@@ -38,7 +38,16 @@ i {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  justify-items: center; }
+  justify-items: center;
+  padding: 50px; }
+  #weekly-forecast #weekday {
+    background-color: white;
+    padding: 30px 30px 0px 30px;
+    border-radius: 5%; }
+
+#weekly-intro {
+  color: white;
+  text-align: center; }
 
 @-webkit-keyframes rotate-loading-icon {
   0% {

@@ -12,9 +12,9 @@ const Days = props => {
       icon = icon.toUpperCase();
 
     return(
-        <div>
-        <Skycons color="white" icon={icon} style={{width: "65px"}} />
-            <h3><Timestamp time={props.day} format="date" /></h3>
+        <div id="weekday">
+        <Skycons color="black" icon={icon} style={{width: "95px"}} />
+            <h3 id="weekday-date"><Timestamp time={props.day} format="date" /></h3>
             <p>High: {Math.round(props.tempHigh)} F</p>
             <p>Low: {Math.round(props.tempLow)} F</p>
             <p>Wind Speed: {Math.round(props.wind)} MPH</p>
