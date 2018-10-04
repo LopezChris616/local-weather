@@ -92,8 +92,9 @@ html {
     background-repeat: no-repeat;
     display: grid;
     color: white;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 60% 40%;
     justify-items: center;
+    justify-content: center;
     -ms-flex-line-pack: $center;
         align-content: $center;
     #time {
@@ -101,6 +102,9 @@ html {
     }
     #currentInfo {
         grid-column: 1 / 2;
+        @media (max-width: 890px){
+            padding-left: 10px;
+        }
     }
     p {
         font-size: 1.5rem;
@@ -114,6 +118,33 @@ html {
     canvas {
         -ms-flex-item-align: $center;
             align-self: $center;
+    }
+    @media (max-width: 890px){
+       grid-template-columns: 100vw;
+       padding-left: 10px;
+       canvas {
+        grid-row: 2 / 3;
+       }
+       p {
+        font-size: 1.3rem;
+       }
+       h1 {
+        font-size: 2.3rem;
+       }
+       h2 {
+        font-size: 1.8rem;
+       }
+    }
+    @media (max-width: 435px){
+        p {
+            font-size: 1.2rem;
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        h2 {
+            font-size: 1.7rem;
+        }
     }
 }
 
@@ -129,11 +160,30 @@ html {
         padding: 30px 30px 0px 30px;
         border-radius: 5%;
     }
+    @media (max-width: 830px){
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 630px){
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0px;
+    }
+    @media (max-width: 435px){
+        grid-template-columns: 1fr;
+    }
 }
 
 #weekly-intro {
     color: white;
     text-align: center;
+    // @media (max-width: 435px){
+    //     h1 {
+    //         font-size: 1.2rem;
+    //     }
+    //     h2{
+    //         font-size: 1rem;
+    //     }
+    // }
+    padding: 10px;
 }
 
 //animations

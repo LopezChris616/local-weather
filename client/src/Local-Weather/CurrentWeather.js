@@ -96,7 +96,7 @@ const CurrentWeather = props => {
                 <p>Temperature: {props.current && Math.round(props.current.temperature)} F</p>
                 <p>Wind Speed: {props.current && Math.round(props.current.windSpeed)} MPH</p>
             </div>
-            <Skycons color="white" icon={icon} style={{width: "515px"}} />
+            <Skycons color="white" icon={icon} style={{width: "305px"}} />
         </div>
     )
 }
