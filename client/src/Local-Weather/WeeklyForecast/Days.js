@@ -3,6 +3,10 @@ import Timestamp from "react-timestamp";
 import Skycons from "react-skycons";
 
 const Days = props => {
+    //Skycons does not accept the format of the string that gets passed
+    //for the icon from the Dark Sky API response
+    //this converts the string into a format that Skycons accepts to display
+    //the icon corresponding with the current weathe
     let icon = props.icon;
     for(let i = 0; i <= icon.length; i++){
         if(icon[i] === "-"){

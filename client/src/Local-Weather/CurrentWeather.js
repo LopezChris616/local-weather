@@ -4,6 +4,11 @@ import Skycons from "react-skycons";
 import CurrentLocation from "./CurrentLocation";
 
 const CurrentWeather = props => {
+
+    //Skycons does not accept the format of the string that gets passed
+    //for the icon from the Dark Sky API response
+    //this converts the string into a format that Skycons accepts to display
+    //the icon corresponding with the current weather
     let icon = props.current.icon;
     for(let i = 0; i <= icon.length; i++){
         if(icon[i] === "-"){
@@ -12,8 +17,9 @@ const CurrentWeather = props => {
       }
       icon = icon.toUpperCase();
 
-    console.log(props.current);
 
+    //dynamic rendering of a background image depending
+    //on what icon is rendered to the page
     let backgroundPic = null;
     switch(icon){
         case "CLEAR_DAY":

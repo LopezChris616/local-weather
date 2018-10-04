@@ -2,7 +2,6 @@ import React from "react";
 import Days from "./Days";
 
 const WeeklyForecast = props => {
-    console.log(props.weekly);
     const week = props.weekly && props.weekly.data.map((day, i) => {
         return (
             <Days 

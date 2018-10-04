@@ -16,11 +16,16 @@ class localWeatherContainer extends Component {
     }
 
     componentDidMount = () => {
+
+        //grabs your current location and sets state with the returned
+        //latitude and longitude
         navigator.geolocation.getCurrentPosition(position => {
           this.setState({ 
               lat: position.coords.latitude, lng: position.coords.longitude 
             });
 
+            //converts the returned coordinates to an address (city, state, country)
+            //and sets state of location to include that address
             Geocode.setApiKey("AIzaSyDCU_sR1UA5seRsI-3OuP-jHKEkr06TZPk");
             Geocode.fromLatLng(String(this.state.lat), String(this.state.lng)).then(response => {
                     this.setState({
@@ -36,6 +41,7 @@ class localWeatherContainer extends Component {
 
 
     render(){
+        //loading screen while the data gets mounted
         let loading = null;
         if(this.props.forecast.length < 1){
             loading = (
@@ -45,6 +51,7 @@ class localWeatherContainer extends Component {
                 </div>
             )
         }else {
+            //displayed once the data returns and displays the current and weekly weather
             loading = (
                 <div id="your-weather">
                     <CurrentWeather 
@@ -59,8 +66,6 @@ class localWeatherContainer extends Component {
             ) 
             
         }
-        // console.log(this.props.forecast);
-        console.log(this.props.forecast.data);
         return(
             <div>
                 {loading}
